@@ -30,7 +30,11 @@ export const getLinks = () => {
         }
     `);
 
-    return (
-        data.allSiteNavigationJson.nodes.filter((link) => link.enabled) || []
+    const enabledLinks = data.allSiteNavigationJson.nodes.filter(
+        (link) => link.enabled
     );
+
+    return {
+        links: enabledLinks,
+    };
 };

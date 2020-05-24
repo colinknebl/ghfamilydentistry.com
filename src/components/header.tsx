@@ -6,23 +6,39 @@ import { getLinks } from '../gql/queries/links';
 
 export function Header() {
     const [isOpen, setIsOpen] = React.useState(false);
-    const links = getLinks();
+    const { links } = getLinks();
+
+    const isNavEnabled = links.length > 0;
 
     return (
         <StyledHeader>
-            <button
-                className="mobile-menu-link"
-                onClick={() => setIsOpen(!isOpen)}
-            >
-                {isOpen ? 'Close' : 'Menu'}
-            </button>
-            {Boolean(links.length) && <Nav links={links} isOpen={isOpen} />}
+            {isNavEnabled && (
+                <>
+                    {/* <nav className="test">
+                        <ul>
+                            <li>one</li>
+                            <li>two</li>
+                        </ul>
+                    </nav> */}
+                    <button
+                        className="mobile-menu-link"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        {isOpen ? 'Close' : 'Menu'}
+                    </button>
+                    <Nav links={links} isOpen={isOpen} />
+                </>
+            )}
         </StyledHeader>
     );
 }
 
 const StyledHeader = styled.header`
     display: grid;
+
+    .test {
+        /* position: absolute; */
+    }
 
     .mobile-menu-link {
         border: none;
