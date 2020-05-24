@@ -1,34 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useStaticQuery, graphql, Link } from 'gatsby';
-import { getLinks, QueriedLink } from '../gql/queries/links';
+
+import { Nav } from './nav';
+import { getLinks } from '../gql/queries/links';
 
 export function Header() {
+    const [isOpen, setIsOpen] = React.useState(false);
     const links = getLinks();
 
     return (
         <StyledHeader>
-            {Boolean(links.length) && <Nav links={links} />}
+            <button
+                className="mobile-menu-link"
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                {isOpen ? 'Close' : 'Menu'}
+            </button>
+            {Boolean(links.length) && <Nav links={links} isOpen={isOpen} />}
         </StyledHeader>
     );
 }
 
-const StyledHeader = styled.header``;
+const StyledHeader = styled.header`
+    display: grid;
 
-interface INavProps {
-    links: QueriedLink[];
-}
+    .mobile-menu-link {
+        border: none;
+        background: none;
+        color: inherit;
+        font-size: 1.25rem;
+        position: relative;
+        top: 10px;
+        right: 10px;
+        z-index: 2;
+        place-self: end;
+    }
 
-function Nav({ links }: INavProps) {
-    return (
-        <nav>
-            <ul>
-                {links.map((link) => (
-                    <li key={link.id}>
-                        <Link to={link.to}>{link.name}</Link>
-                    </li>
-                ))}
-            </ul>
-        </nav>
-    );
-}
+    @media screen and (min-width: 860px) {
+        .mobile-menu-link {
+            display: none;
+        }
+    }
+`;
