@@ -23,7 +23,6 @@ export function OpenModal(props: IOpenModalProps) {
             }
         }
     `);
-    console.log('data.contactJson.nodes.href', data.contactJson.nodes);
 
     return (
         <StyledOpenModal>
@@ -38,6 +37,7 @@ export function OpenModal(props: IOpenModalProps) {
 
 const StyledOpenModal = styled.div`
     margin: 20px 0;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;

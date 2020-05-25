@@ -63,7 +63,7 @@ const StyledModal = styled.div`
         color: var(--on-primary-color);
         padding: 20px;
         height: min-content;
-        max-height: 90vh;
+        max-height: 80vh;
         width: 90vw;
         max-width: 800px;
         overflow: auto;

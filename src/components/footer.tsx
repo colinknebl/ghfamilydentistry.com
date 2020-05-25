@@ -32,7 +32,6 @@ const StyledFooter = styled.footer`
     color: var(--on-primary-color);
     font-size: 1rem;
     line-height: 1.8;
-    margin-bottom: 10px;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr;
