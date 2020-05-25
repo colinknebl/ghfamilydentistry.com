@@ -2,31 +2,31 @@
     {
         "name": "Home",
         "to": "/",
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "Services",
         "to": "/services",
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "New Patients",
         "to": "/new-patients",
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "Staff",
         "to": "/staff",
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "Office Tour",
         "to": "/office-tour",
-        "enabled": true
+        "enabled": false
     },
     {
         "name": "Education",
         "to": "/education",
-        "enabled": true
+        "enabled": false
     }
 ]

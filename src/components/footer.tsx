@@ -108,7 +108,7 @@ const StyledFooter = styled.footer`
 
     /* desktop */
     @media screen and (min-width: 860px) {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
 
         & > div {
             border: none !important;
@@ -207,7 +207,7 @@ function OfficeHours({ hours }: { hours: QueriedHours[] }) {
 
 function SiteMap({ links }: { links: QueriedLink[] }) {
     return (
-        <div>
+        <div {...(links.length === 0 ? { style: { display: 'none' } } : {})}>
             <p className="footer-section-header">Site Map</p>
             <nav>
                 <LinkList links={links} />
