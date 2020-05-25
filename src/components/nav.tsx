@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { LinkList } from './link-list';
 import type { QueriedLink } from '../gql/queries/links';
 
 interface INavProps {
@@ -12,15 +13,7 @@ interface INavProps {
 export function Nav({ links, isOpen }: INavProps) {
     return (
         <StyledNav {...(isOpen ? { open: true } : {})}>
-            <ul>
-                {links.map((link) => (
-                    <li key={link.id}>
-                        <Link className="link" to={link.to}>
-                            {link.name}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
+            <LinkList links={links} />
         </StyledNav>
     );
 }

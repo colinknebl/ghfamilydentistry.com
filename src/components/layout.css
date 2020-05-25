@@ -182,7 +182,6 @@ body {
     font-size: 18px;
     color: var(--primary-color);
     margin: 0;
-    overflow: hidden;
 }
 
 /* html {

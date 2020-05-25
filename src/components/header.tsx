@@ -14,12 +14,6 @@ export function Header() {
         <StyledHeader>
             {isNavEnabled && (
                 <>
-                    {/* <nav className="test">
-                        <ul>
-                            <li>one</li>
-                            <li>two</li>
-                        </ul>
-                    </nav> */}
                     <button
                         className="mobile-menu-link"
                         onClick={() => setIsOpen(!isOpen)}

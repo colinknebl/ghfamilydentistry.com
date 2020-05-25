@@ -9,6 +9,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Header } from './header';
+import { Footer } from './footer';
 import { Modal } from './modal';
 import { getModal } from '../gql/queries/modal';
 import './layout.css';
@@ -21,6 +22,7 @@ const Page = ({ children }) => {
             <Header />
             <Modal modal={modal} />
             {children}
+            <Footer />
         </PageContainer>
     );
 };
