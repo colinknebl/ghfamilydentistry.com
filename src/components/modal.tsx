@@ -4,18 +4,19 @@ import styled from 'styled-components';
 import type { Modal as ModalType } from '../gql/queries/modal';
 import { Block } from '../models/content/Block';
 import { ContentBlock, ContentList } from './content-block';
+import { ModalContext } from '../hooks/useModal';
 
 interface IModalProps {
     modal: ModalType;
     open: boolean;
-    onToggle: () => void;
 }
 
-export function Modal({ modal, open, onToggle }: IModalProps) {
+export function Modal({ modal, open }: IModalProps) {
+    const { setIsModalOpen } = React.useContext(ModalContext);
     return (
         <StyledModal {...(open ? { open: true } : {})}>
             <div className="modal-container">
-                <button onClick={onToggle}>&#x2715;</button>
+                <button onClick={() => setIsModalOpen(false)}>&#x2715;</button>
                 {modal.content.blocks.map((block) => {
                     if (block instanceof Block) {
                         return <ContentBlock key={block.key} block={block} />;

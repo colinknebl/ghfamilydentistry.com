@@ -12,31 +12,27 @@ import { Header } from './header';
 import { Footer } from './footer';
 import { Modal } from './modal';
 import { getModal } from '../gql/queries/modal';
+import { useModal, ModalContext, IModalContext } from '../hooks/useModal';
 import './layout.css';
 
 const Page = ({ children }) => {
-    const [isModalOpen, setIsModalOpen] = React.useState(false);
-    const [hasModalShown, setHasModalShown] = React.useState(false);
     const modal = getModal();
-
-    if (!hasModalShown) {
-        setTimeout(() => {
-            setIsModalOpen(true);
-        }, 2000);
-        setHasModalShown(true);
-    }
+    const [isModalOpen, setIsModalOpen] = useModal();
 
     return (
-        <PageContainer>
-            <Header />
-            <Modal
-                modal={modal}
-                open={isModalOpen}
-                onToggle={() => setIsModalOpen(!isModalOpen)}
-            />
-            {children}
-            <Footer />
-        </PageContainer>
+        <ModalContext.Provider
+            value={{
+                isModalOpen,
+                setIsModalOpen,
+            }}
+        >
+            <PageContainer>
+                <Header />
+                <Modal modal={modal} open={isModalOpen} />
+                {children}
+                <Footer />
+            </PageContainer>
+        </ModalContext.Provider>
     );
 };
 
