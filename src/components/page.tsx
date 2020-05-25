@@ -15,12 +15,25 @@ import { getModal } from '../gql/queries/modal';
 import './layout.css';
 
 const Page = ({ children }) => {
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+    const [hasModalShown, setHasModalShown] = React.useState(false);
     const modal = getModal();
+
+    if (!hasModalShown) {
+        setTimeout(() => {
+            setIsModalOpen(true);
+        }, 2000);
+        setHasModalShown(true);
+    }
 
     return (
         <PageContainer>
             <Header />
-            <Modal modal={modal} />
+            <Modal
+                modal={modal}
+                open={isModalOpen}
+                onToggle={() => setIsModalOpen(!isModalOpen)}
+            />
             {children}
             <Footer />
         </PageContainer>
