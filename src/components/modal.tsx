@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import type { Modal as ModalType } from '../gql/queries/modal';
-import { List, Block } from '../gql/queries/modal';
+import { Block } from '../models/content/Block';
 import { ContentBlock, ContentList } from './content-block';
 
 interface IModalProps {
