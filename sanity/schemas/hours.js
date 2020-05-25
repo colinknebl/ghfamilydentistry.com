@@ -1,71 +1,42 @@
 export default {
     name: 'hours',
-    title: 'Hours',
+    title: 'Office Hours',
     type: 'document',
     fields: [
         {
-            name: 'monAndWedHours',
-            title: 'Monday & Wednesday',
-            type: 'document',
-            fields: [
-                {
-                    title: 'Office Opens',
-                    name: 'officeOpen',
-                    type: 'string',
-                },
-                {
-                    title: 'Lunch Starts',
-                    name: 'lunchStart',
-                    type: 'string',
-                },
-                {
-                    title: 'Lunch Ends',
-                    name: 'lunchEnds',
-                    type: 'string',
-                },
-                {
-                    title: 'Office Closes',
-                    name: 'officeClose',
-                    type: 'string',
-                },
-            ],
+            name: 'days',
+            title: 'Days',
+            type: 'string',
         },
         {
-            name: 'tueAndThurHours',
-            title: 'Tuesday & Thursday',
-            type: 'document',
-            fields: [
-                {
-                    title: 'Office Opens',
-                    name: 'officeOpen',
-                    type: 'string',
-                },
-                {
-                    title: 'Lunch Starts',
-                    name: 'lunchStart',
-                    type: 'string',
-                },
-                {
-                    title: 'Lunch Ends',
-                    name: 'lunchEnds',
-                    type: 'string',
-                },
-                {
-                    title: 'Office Closes',
-                    name: 'officeClose',
-                    type: 'string',
-                },
-            ],
+            title: 'Office Opens',
+            name: 'officeOpen',
+            type: 'string',
+        },
+        {
+            title: 'Lunch Starts',
+            name: 'lunchStart',
+            type: 'string',
+        },
+        {
+            title: 'Lunch Ends',
+            name: 'lunchEnds',
+            type: 'string',
+        },
+        {
+            title: 'Office Closes',
+            name: 'officeClose',
+            type: 'string',
         },
     ],
     preview: {
         select: {
-            title: '',
+            title: 'days',
         },
-        prepare() {
-            return {
-                title: 'Office Hours',
-            };
-        },
+        // prepare() {
+        //     return {
+        //         title: 'Office Hours',
+        //     };
+        // },
     },
 };
