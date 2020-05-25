@@ -6,6 +6,7 @@ import Page from '../components/page';
 import SEO from '../components/seo';
 import { OpenModal } from '../components/open-modal';
 import { JumbotronSection } from '../components/jumbotron-section';
+import { Letter } from '../components/letter';
 
 const IndexPage = (props: PageProps<IPageQueryResults>) => {
     return (
@@ -21,6 +22,7 @@ const IndexPage = (props: PageProps<IPageQueryResults>) => {
                     ))}
                 </StyledDocList>
             </JumbotronSection>
+            <Letter />
         </Page>
     );
 };
