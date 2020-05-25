@@ -53,9 +53,12 @@ const StyledModal = styled.div`
 
     .modal-container {
         background: var(--primary-color);
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.11), 0 2px 2px rgba(0, 0, 0, 0.11),
-            0 4px 4px rgba(0, 0, 0, 0.11), 0 8px 8px rgba(0, 0, 0, 0.11),
-            0 16px 16px rgba(0, 0, 0, 0.11), 0 32px 32px rgba(0, 0, 0, 0.11);
+        box-shadow: 0 1px 1px rgba(255, 255, 255, 0.01),
+            0 2px 2px rgba(255, 255, 255, 0.01),
+            0 4px 4px rgba(255, 255, 255, 0.01),
+            0 8px 8px rgba(255, 255, 255, 0.01),
+            0 16px 16px rgba(255, 255, 255, 0.01),
+            0 32px 32px rgba(255, 255, 255, 0.01);
         color: var(--on-primary-color);
         padding: 20px;
         height: min-content;
