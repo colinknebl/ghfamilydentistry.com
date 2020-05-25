@@ -1,3 +1,7 @@
+require('dotenv').config({
+    path: `.env`,
+});
+
 module.exports = {
     siteMetadata: {
         title: `Grand Haven Family Dentistry`,
@@ -33,6 +37,22 @@ module.exports = {
                 theme_color: `#663399`,
                 display: `minimal-ui`,
                 icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+            },
+        },
+        {
+            resolve: 'gatsby-source-sanity',
+            options: {
+                projectId: '4le0odfg',
+                dataset: 'production',
+
+                // a token with read permissions is required
+                // if you have a private dataset
+                token: process.env.SANITY_TOKEN,
+
+                // If the Sanity GraphQL API was deployed using `--tag <name>`,
+                // use `graphqlTag` to specify the tag name. Defaults to `default`.
+                graphqlTag: 'default',
+                // https://4le0odfg.api.sanity.io/v1/graphql/production/default
             },
         },
         // this (optional) plugin enables Progressive Web App + Offline functionality

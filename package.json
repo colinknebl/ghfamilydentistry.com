@@ -14,6 +14,7 @@
     "gatsby-plugin-sharp": "^2.6.4",
     "gatsby-plugin-styled-components": "^3.3.2",
     "gatsby-source-filesystem": "^2.3.4",
+    "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-json": "^2.4.3",
     "gatsby-transformer-sharp": "^2.5.2",
     "prop-types": "^15.7.2",
@@ -37,6 +38,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "sanity:start": "cd sanity && sanity start & cd ..",
+    "sanity:deploy:gql": "cd sanity && sanity graphql deploy && cd ..",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {

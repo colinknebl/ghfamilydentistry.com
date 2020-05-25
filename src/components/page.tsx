@@ -9,12 +9,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Header } from './header';
+import { Modal } from './modal';
+import { getModal } from '../gql/queries/modal';
 import './layout.css';
 
 const Page = ({ children }) => {
+    const modal = getModal();
+
     return (
         <PageContainer>
             <Header />
+            <Modal modal={modal} />
             {children}
         </PageContainer>
     );
