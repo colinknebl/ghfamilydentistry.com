@@ -21,7 +21,7 @@ export default {
         {
             name: 'content',
             title: 'Content',
-            type: 'myBlockContent',
+            type: 'content',
         },
     ],
 
