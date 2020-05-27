@@ -2,10 +2,15 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 interface Doctor {
     name: string;
+    image: {
+        asset: {
+            url: string;
+        };
+    };
 }
 
 type DoctorsQueryResult = {
-    allDoctorsJson: {
+    allSanityDoctors: {
         nodes: QueriedDoctor[];
     };
 };
@@ -14,19 +19,24 @@ export interface QueriedDoctor extends Doctor {
     id: string;
 }
 
-export const getModal = () => {
+export const getDoctors = () => {
     const data = useStaticQuery<DoctorsQueryResult>(graphql`
         {
-            allDoctorsJson {
+            allSanityDoctors {
                 nodes {
                     id
                     name
+                    image {
+                        asset {
+                            url
+                        }
+                    }
                 }
             }
         }
     `);
 
     return {
-        doctors: data.allDoctorsJson.nodes,
+        doctors: data.allSanityDoctors.nodes,
     };
 };

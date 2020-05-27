@@ -6,8 +6,10 @@ import Page from '../components/page';
 import SEO from '../components/seo';
 import { JumbotronSection } from '../components/jumbotron-section';
 import { Letter } from '../components/_temp/letter';
+import { getDoctors } from '../gql/queries/doctors';
 
 const IndexPage = (props: PageProps<IPageQueryResults>) => {
+    const { doctors } = getDoctors();
     return (
         <Page>
             <SEO title="Home" />
@@ -15,7 +17,7 @@ const IndexPage = (props: PageProps<IPageQueryResults>) => {
                 image={props.data.placeholderImage.childImageSharp.fluid}
             >
                 <StyledDocList>
-                    {props.data.allDoctorsJson.nodes.map((doc) => (
+                    {doctors.map((doc) => (
                         <li key={doc.id}>{doc.name}</li>
                     ))}
                 </StyledDocList>
@@ -39,9 +41,6 @@ interface IPageQueryResults {
             };
         };
     };
-    allDoctorsJson: {
-        nodes: Array<{ id: string; name: string }>;
-    };
 }
 
 export const query = graphql`
@@ -51,12 +50,6 @@ export const query = graphql`
                 fluid(maxWidth: 800) {
                     ...GatsbyImageSharpFluid
                 }
-            }
-        }
-        allDoctorsJson {
-            nodes {
-                id
-                name
             }
         }
     }
