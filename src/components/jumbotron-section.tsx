@@ -66,10 +66,11 @@ const StyledJumbotron = styled.div`
     }
 
     h1 {
-        font-size: max(5vw, 2em, 2rem);
+        font-size: max(2.5rem, 4vw);
         text-align: center;
         position: relative;
         padding: 25px;
+        margin: 0 0 15px 0;
 
         &::before,
         &::after {
@@ -89,6 +90,12 @@ const StyledJumbotron = styled.div`
 
         &::after {
             bottom: 0;
+        }
+    }
+
+    @media screen and (min-width: 2000px) {
+        h1 {
+            font-size: 75px;
         }
     }
 `;

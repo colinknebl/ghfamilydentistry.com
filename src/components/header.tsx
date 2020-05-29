@@ -30,10 +30,6 @@ export function Header() {
 const StyledHeader = styled.header`
     display: grid;
 
-    .test {
-        /* position: absolute; */
-    }
-
     .mobile-menu-link {
         border: none;
         background: none;
