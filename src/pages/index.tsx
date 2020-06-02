@@ -4,7 +4,6 @@ import React from 'react';
 
 import Page from '../components/page';
 import SEO from '../components/seo';
-import { OpenModal } from '../components/open-modal';
 import { JumbotronSection } from '../components/jumbotron-section';
 import { Letter } from '../components/letter';
 
@@ -12,7 +11,6 @@ const IndexPage = (props: PageProps<IPageQueryResults>) => {
     return (
         <Page>
             <SEO title="Home" />
-            <OpenModal text="VIEW COVID-19 NOTICE!" />
             <JumbotronSection
                 image={props.data.placeholderImage.childImageSharp.fluid}
             >

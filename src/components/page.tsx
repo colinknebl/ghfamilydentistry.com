@@ -28,7 +28,7 @@ const Page = ({ children }) => {
         >
             <PageContainer>
                 <Header />
-                <Modal modal={modal} open={isModalOpen} />
+                {/* <Modal modal={modal} open={isModalOpen} /> */}
                 {children}
                 <Footer />
             </PageContainer>
