@@ -22,7 +22,7 @@
     {
         "name": "Office Tour",
         "to": "/office-tour",
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "Education",

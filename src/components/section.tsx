@@ -2,14 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface ISectionProps {
-    title: string;
+    title?: string;
     children: JSX.Element;
 }
 
 export function Section({ title, children }: ISectionProps) {
     return (
         <StyledSection>
-            <h2>{title}</h2>
+            {title && <h2>{title}</h2>}
             {children}
         </StyledSection>
     );
@@ -17,6 +17,7 @@ export function Section({ title, children }: ISectionProps) {
 
 const StyledSection = styled.section`
     font-size: 1rem;
+    margin-bottom: 40px;
 
     h2 {
         text-decoration: underline;

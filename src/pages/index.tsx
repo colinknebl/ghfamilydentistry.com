@@ -1,4 +1,5 @@
 import { graphql, PageProps } from 'gatsby';
+import { FluidObject } from 'gatsby-image';
 import styled from 'styled-components';
 import React from 'react';
 
@@ -7,6 +8,7 @@ import SEO from '../components/seo';
 import { JumbotronSection } from '../components/jumbotron-section';
 import { Letter } from '../components/_temp/letter';
 import { getDoctors } from '../gql/queries/doctors';
+import { Section } from '../components/section';
 
 const IndexPage = (props: PageProps<IPageQueryResults>) => {
     const { doctors } = getDoctors();
@@ -23,7 +25,9 @@ const IndexPage = (props: PageProps<IPageQueryResults>) => {
                     ))}
                 </StyledDocList>
             </JumbotronSection>
-            <Letter />
+            <Section>
+                <Letter />
+            </Section>
         </Page>
     );
 };
@@ -33,13 +37,7 @@ export default IndexPage;
 interface IPageQueryResults {
     placeholderImage: {
         childImageSharp: {
-            fluid: {
-                aspectRatio: number;
-                base64: string;
-                sizes: string;
-                src: string;
-                srcSet: string;
-            };
+            fluid: FluidObject;
         };
     };
     site: {
