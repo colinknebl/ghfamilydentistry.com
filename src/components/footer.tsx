@@ -31,7 +31,6 @@ const StyledFooter = styled.footer`
     background: var(--primary-color);
     color: var(--on-primary-color);
     font-size: 1rem;
-    line-height: 1.8;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr;
@@ -107,7 +106,7 @@ const StyledFooter = styled.footer`
 
     /* desktop */
     @media screen and (min-width: 860px) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
 
         & > div {
             border: none !important;

@@ -6,33 +6,19 @@ import { FluidObject } from 'gatsby-image';
 
 interface IJumbotronSectionProps {
     image: FluidObject;
+    title: string;
     children?: JSX.Element;
 }
 
 export function JumbotronSection(props: IJumbotronSectionProps) {
-    const data = useStaticQuery<{ site: { siteMetadata: { title } } }>(graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                }
-            }
-        }
-    `);
-
     return (
         <StyledJumbotron>
             <Image fluid={props.image} />
             <div className="content-container">
                 <div>
-                    <h1>{data.site.siteMetadata.title}</h1>
+                    <h1>{props.title}</h1>
                 </div>
                 {props.children}
-                {/* <span
-                    dangerouslySetInnerHTML={{
-                        __html: props.subText ? props.subText : '',
-                    }}
-                ></span> */}
             </div>
         </StyledJumbotron>
     );
@@ -42,7 +28,6 @@ const StyledJumbotron = styled.div`
     position: relative;
     width: 100%;
     height: 400px;
-    max-width: 85vw;
     overflow: hidden;
     margin: auto;
     margin-bottom: 40px;

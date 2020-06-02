@@ -182,6 +182,7 @@ body {
     font-size: 18px;
     color: var(--primary-color);
     margin: 0;
+    line-height: 1.6;
 }
 
 /* html {

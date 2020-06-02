@@ -36,8 +36,6 @@ const StyledHeader = styled.header`
         color: inherit;
         font-size: 1.25rem;
         position: relative;
-        top: 10px;
-        right: 10px;
         z-index: 2;
         place-self: end;
     }

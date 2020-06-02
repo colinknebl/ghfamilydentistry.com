@@ -2,12 +2,12 @@
     {
         "name": "Home",
         "to": "/",
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "Services",
         "to": "/services",
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "New Patients",
