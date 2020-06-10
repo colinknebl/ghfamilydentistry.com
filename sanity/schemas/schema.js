@@ -7,12 +7,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 // We import object and document schemas
 // import _blockContent from './__blockContent';
 import content from './content';
-import services from './services';
+import servicesPage from './pages/services';
 import modal from './modal';
 import hours from './hours';
 import forms from './forms';
 import doctors from './doctors';
-import educationPage from './educationPage';
+import educationPage from './pages/education';
 import link from './link';
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -28,7 +28,7 @@ export default createSchema({
         hours,
         forms,
         doctors,
-        services,
+        servicesPage,
         educationPage,
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas

@@ -19,9 +19,11 @@ const ServicesPage = (props: PageProps<IPageQueryResults>) => {
             />
             <Section>
                 <ul>
-                    {props.data.allSanityServices.nodes.map((service, i) => (
-                        <li key={i}>{service.name}</li>
-                    ))}
+                    {props.data.sanityServicesPage.services.map(
+                        (service, i) => (
+                            <li key={i}>{service}</li>
+                        )
+                    )}
                 </ul>
             </Section>
         </Page>
@@ -36,8 +38,8 @@ interface IPageQueryResults {
             fluid: FluidObject;
         };
     };
-    allSanityServices: {
-        nodes: Array<{ name: string }>;
+    sanityServicesPage: {
+        services: string[];
     };
 }
 
@@ -50,10 +52,8 @@ export const query = graphql`
                 }
             }
         }
-        allSanityServices {
-            nodes {
-                name
-            }
+        sanityServicesPage {
+            services
         }
     }
 `;
