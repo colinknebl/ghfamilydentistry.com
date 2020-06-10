@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import type { Modal as ModalType } from '../gql/queries/modal';
-import { Block } from '../models/content/Block';
-import { ContentBlock, ContentList } from './content-block';
 import { ModalContext } from '../hooks/useModal';
+import { ContentView } from './content-view';
 
 interface IModalProps {
     modal: ModalType;
@@ -17,13 +16,7 @@ export function Modal({ modal, open }: IModalProps) {
         <StyledModal {...(open ? { open: true } : {})}>
             <div className="modal-container">
                 <button onClick={() => setIsModalOpen(false)}>&#x2715;</button>
-                {modal.content.blocks.map((block) => {
-                    if (block instanceof Block) {
-                        return <ContentBlock key={block.key} block={block} />;
-                    } else {
-                        return <ContentList key={block.key} list={block} />;
-                    }
-                })}
+                <ContentView content={modal.content} />
             </div>
         </StyledModal>
     );
