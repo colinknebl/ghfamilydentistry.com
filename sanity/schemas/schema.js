@@ -12,6 +12,8 @@ import modal from './modal';
 import hours from './hours';
 import forms from './forms';
 import doctors from './doctors';
+import educationPage from './educationPage';
+import link from './link';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -27,9 +29,11 @@ export default createSchema({
         forms,
         doctors,
         services,
+        educationPage,
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
         // my custom types
         content,
+        link,
     ]),
 });
