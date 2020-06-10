@@ -27,6 +27,6 @@
     {
         "name": "Education",
         "to": "/education",
-        "enabled": false
+        "enabled": true
     }
 ]
