@@ -44,6 +44,7 @@ module.exports = {
             options: {
                 projectId: '4le0odfg',
                 dataset: 'production',
+                watchMode: true,
 
                 // a token with read permissions is required
                 // if you have a private dataset
