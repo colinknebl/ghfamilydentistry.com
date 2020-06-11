@@ -13,6 +13,7 @@ import hours from './hours';
 import forms from './forms';
 import doctors from './doctors';
 import educationPage from './pages/education';
+import staffPage from './pages/staff';
 import link from './link';
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -30,6 +31,7 @@ export default createSchema({
         doctors,
         servicesPage,
         educationPage,
+        staffPage,
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
         // my custom types
