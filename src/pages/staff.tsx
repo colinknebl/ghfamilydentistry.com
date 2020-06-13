@@ -6,7 +6,8 @@ import Page from '../components/page';
 import SEO from '../components/seo';
 import { JumbotronSection } from '../components/jumbotron-section';
 import { Section } from '../components/section';
-import { Doctors, IDoctorViewProps } from '../components/doctors';
+import { Doctors } from '../components/doctors';
+import { Staff } from '../components/staff';
 
 const TITLE = 'Staff';
 
@@ -19,7 +20,10 @@ const StaffPage = (props: PageProps<IPageQueryResults>) => {
                 title={TITLE}
             />
             <Section>
-                <Doctors />
+                <>
+                    <Doctors />
+                    <Staff />
+                </>
             </Section>
         </Page>
     );

@@ -25,7 +25,7 @@ export function Doctors(props: IDoctorsProps) {
     );
 }
 
-const StyledDoctorList = styled.ul<Pick<IDoctorsProps, 'column'>>`
+export const StyledDoctorList = styled.ul<Pick<IDoctorsProps, 'column'>>`
     list-style-type: none;
     padding: 0;
     margin: 0;
