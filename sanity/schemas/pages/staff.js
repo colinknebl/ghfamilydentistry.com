@@ -4,15 +4,19 @@ export default {
     type: 'document',
     fields: [
         {
-            title: 'Links',
-            name: 'links',
-            type: 'array',
-            of: [{ type: 'link' }],
+            title: 'Hygienists',
+            name: 'hygienists',
+            type: 'jobFunction',
         },
         {
-            title: 'Disclaimer',
-            name: 'disclaimer',
-            type: 'content',
+            title: 'Assistants',
+            name: 'assistants',
+            type: 'jobFunction',
+        },
+        {
+            title: 'Front Office',
+            name: 'frontOffice',
+            type: 'jobFunction',
         },
     ],
     preview: {

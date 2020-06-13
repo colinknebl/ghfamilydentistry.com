@@ -15,6 +15,7 @@ import doctors from './doctors';
 import educationPage from './pages/education';
 import staffPage from './pages/staff';
 import link from './link';
+import jobFunction from './jobFunction';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -37,5 +38,6 @@ export default createSchema({
         // my custom types
         content,
         link,
+        jobFunction,
     ]),
 });
