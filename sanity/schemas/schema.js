@@ -10,10 +10,11 @@ import content from './content';
 import servicesPage from './pages/services';
 import modal from './modal';
 import hours from './hours';
-import forms from './forms';
+import form from './form';
 import doctors from './doctors';
 import educationPage from './pages/education';
 import staffPage from './pages/staff';
+import newPatientsPage from './pages/newPatients';
 import link from './link';
 import jobFunction from './jobFunction';
 
@@ -28,11 +29,12 @@ export default createSchema({
         // in the studio.
         modal,
         hours,
-        forms,
+        form,
         doctors,
         servicesPage,
         educationPage,
         staffPage,
+        newPatientsPage,
         // When added to this list, object types can be used as
         // { type: 'typename' } in other document schemas
         // my custom types
