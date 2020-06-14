@@ -71,5 +71,5 @@ const StyledDocNames = styled.div`
 `;
 
 function DoctorName({ doctor }: IDoctorViewProps) {
-    return <li>{doctor.name}</li>;
+    return <span>{doctor.name}</span>;
 }
