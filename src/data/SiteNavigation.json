@@ -12,7 +12,7 @@
     {
         "name": "New Patients",
         "to": "/new-patients",
-        "enabled": false
+        "enabled": true
     },
     {
         "name": "Staff",
