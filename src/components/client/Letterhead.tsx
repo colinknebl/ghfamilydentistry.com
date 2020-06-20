@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { getDoctors } from '../../gql/queries/doctors';
+
 interface ILetterheadProps {
     date?: string;
 }
 
 export function Letterhead({ date }: ILetterheadProps) {
+    const { doctors } = getDoctors();
     return (
         <>
             <StyledHeader>
@@ -13,13 +16,11 @@ export function Letterhead({ date }: ILetterheadProps) {
                     <span className="practice-name">
                         Grand Haven Family Dentistry
                     </span>
-                    <span className="doc-name">
-                        Peter D. Rick, D.D.S., P.C.
-                    </span>
-                    <span className="doc-name">
-                        Chelsea L. Klipfel, D.D.S., P.L.L.C.
-                    </span>
-                    <span className="doc-name">Peter D. Rick, Jr., D.D.S.</span>
+                    {doctors.map((doctor) => (
+                        <span key={doctor.id} className="doc-name">
+                            {doctor.name}
+                        </span>
+                    ))}
                 </div>
                 <div>
                     <address>
