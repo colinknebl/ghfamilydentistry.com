@@ -1,42 +1,48 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { Content, RawBlock } from '../../models/content/Content';
+import { RawBlock } from '../../models/content/Content';
+import { Modal } from '../../models/Modal';
 
 interface _Modal {
-    name: string;
     title: string;
     publishedAt: string;
+    image: {
+        asset: {
+            url: string | undefined;
+        };
+    };
     _rawContent: RawBlock[];
 }
 
 type LinkQueryResult = {
-    sanityModal: QueriedModal;
+    sanitySite: {
+        activeModal: QueriedModal;
+    };
 };
 
-export interface Modal extends Omit<_Modal, '_rawContent'> {
-    content: Content;
-}
-
-interface QueriedModal extends _Modal {
+export interface QueriedModal extends _Modal {
     id: string;
 }
 
-export const getModal = () => {
-    const { sanityModal } = useStaticQuery<LinkQueryResult>(graphql`
+export const getModal = (): Modal => {
+    const {
+        sanitySite: { activeModal },
+    } = useStaticQuery<LinkQueryResult>(graphql`
         {
-            sanityModal {
-                id
-                title
-                publishedAt
-                _rawContent
+            sanitySite {
+                activeModal {
+                    id
+                    title
+                    publishedAt
+                    image {
+                        asset {
+                            url
+                        }
+                    }
+                    _rawContent
+                }
             }
         }
     `);
 
-    return {
-        id: sanityModal.id,
-        title: sanityModal.title,
-        publishedAt: sanityModal.publishedAt,
-        name: sanityModal.name,
-        content: new Content(sanityModal._rawContent),
-    };
+    return new Modal(activeModal);
 };

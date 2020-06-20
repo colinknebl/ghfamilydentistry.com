@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 import { Header } from './header';
 import { Footer } from './footer';
-import { Modal } from './modal';
+import { ModalView } from './modal';
 import { getModal } from '../gql/queries/modal';
 import { useModal, ModalContext, IModalContext } from '../hooks/useModal';
 import './layout.css';
@@ -28,7 +28,9 @@ const Page = ({ children }) => {
         >
             <PageContainer>
                 <Header />
-                {/* <Modal modal={modal} open={isModalOpen} /> */}
+                {modal.isActive && (
+                    <ModalView modal={modal} open={isModalOpen} />
+                )}
                 {children}
                 <Footer />
             </PageContainer>

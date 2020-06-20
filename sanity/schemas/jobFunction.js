@@ -14,7 +14,7 @@ export default {
             type: 'content',
         },
         {
-            title: 'Image',
+            title: 'Image (optional)',
             name: 'image',
             type: 'image',
         },

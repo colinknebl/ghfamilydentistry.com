@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import type { Modal as ModalType } from '../gql/queries/modal';
+import type { Modal } from '../models/Modal';
 import { ModalContext } from '../hooks/useModal';
 import { ContentView } from './content-view';
 
 interface IModalProps {
-    modal: ModalType;
+    modal: Modal;
     open: boolean;
 }
 
-export function Modal({ modal, open }: IModalProps) {
+export function ModalView({ modal, open }: IModalProps) {
     const { setIsModalOpen } = React.useContext(ModalContext);
     return (
         <StyledModal {...(open ? { open: true } : {})}>
             <div className="modal-container">
                 <button onClick={() => setIsModalOpen(false)}>&#x2715;</button>
+                {modal.imageUrl && <img src={modal.imageUrl} />}
                 <ContentView content={modal.content} />
             </div>
         </StyledModal>
@@ -61,6 +62,14 @@ const StyledModal = styled.div`
         max-width: 800px;
         overflow: auto;
         position: relative;
+    }
+
+    img {
+        height: 250px;
+        display: block;
+        object-fit: contain;
+        object-position: center;
+        margin: auto;
     }
 
     button {

@@ -8,11 +8,11 @@ export default {
             title: 'Title',
             type: 'string',
         },
-        // {
-        //     name: 'image',
-        //     title: 'Image',
-        //     type: 'image',
-        // },
+        {
+            name: 'image',
+            title: 'Image (optional)',
+            type: 'image',
+        },
         {
             name: 'publishedAt',
             title: 'Published at',
