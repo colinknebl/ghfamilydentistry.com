@@ -14,6 +14,8 @@ import Img, { FluidObject } from 'gatsby-image';
 
 interface IImageProps {
     fluid: FluidObject;
+    alt?: string;
+    style?: object;
 }
 
 export const Image = ({ fluid }: IImageProps) => (

@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 import { Letterhead } from '../client/Letterhead';
 import { StyledPaper } from '../letter';
+import { getDoctors } from '../../gql/queries/doctors';
 
 export function Letter() {
+    const { doctors } = getDoctors();
     return (
         <StyledLetter>
             <Letterhead date="May 22, 2020" />
@@ -161,13 +163,11 @@ export function Letter() {
             <footer>
                 <p>
                     <span>Sincerely,</span>
-                    <span className="doc-name">
-                        Peter D. Rick, D.D.S., P.C.
-                    </span>
-                    <span className="doc-name">
-                        Chelsea L. Klipfel, D.D.S., P.L.L.C.
-                    </span>
-                    <span className="doc-name">Peter D. Rick, Jr., D.D.S.</span>
+                    {doctors.map((doctor) => (
+                        <span key={doctor.id} className="doc-name">
+                            {doctor.name}
+                        </span>
+                    ))}
                 </p>
             </footer>
         </StyledLetter>
