@@ -18,6 +18,6 @@ interface IImageProps {
     style?: object;
 }
 
-export const Image = ({ fluid }: IImageProps) => (
-    <Img className="image" fluid={fluid} />
+export const Image = ({ fluid, alt, style }: IImageProps) => (
+    <Img className="image" fluid={fluid} alt={alt} style={style} />
 );
