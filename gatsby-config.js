@@ -7,6 +7,7 @@ module.exports = {
         title: `Grand Haven Family Dentistry`,
         description: `Grand Haven's permier Family Dentistry Practice`,
         author: `Colin Knebl`,
+        sanityStudioURL: 'https://ghfamilydentistry.sanity.studio/',
     },
     plugins: [
         `gatsby-plugin-styled-components`,
