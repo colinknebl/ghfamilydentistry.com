@@ -2,19 +2,37 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { getDoctors } from '../../gql/queries/doctors';
+import { useStaticQuery, graphql } from 'gatsby';
 
 interface ILetterheadProps {
     date?: string;
 }
 
+interface IQueryResults {
+    site: {
+        siteMetadata: {
+            title: string;
+        };
+    };
+}
+
 export function Letterhead({ date }: ILetterheadProps) {
     const { doctors } = getDoctors();
+    const query = useStaticQuery<IQueryResults>(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `);
     return (
         <>
             <StyledHeader>
                 <div>
                     <span className="practice-name">
-                        Grand Haven Family Dentistry
+                        {query.site.siteMetadata.title}
                     </span>
                     {doctors.map((doctor) => (
                         <span key={doctor.id} className="doc-name">
