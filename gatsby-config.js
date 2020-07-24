@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
     siteMetadata: {
         title: `Grand Haven Family Dentistry`,
-        description: `Grand Haven's permier Family Dentistry Practice`,
+        description: `Grand Haven's premier Family Dentistry Practice`,
         author: `Colin Knebl`,
         sanityStudioURL: 'https://ghfamilydentistry.sanity.studio/',
     },
